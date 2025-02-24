@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`テスト・HomePage 初期表示 1`] = `
+<DocumentFragment>
+  <main
+    class="w-full text-center p-4"
+  >
+    <h1
+      class="text-xl"
+    >
+      Next-Todo
+    </h1>
+    <div
+      class="mt-4"
+    >
+      <ul>
+        <li>
+          <a
+            class="underline"
+            href="/schedule"
+          >
+            予定
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+</DocumentFragment>
+`;
