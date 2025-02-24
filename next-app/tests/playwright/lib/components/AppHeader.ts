@@ -3,25 +3,25 @@ import { getClickOption, PageOption } from "../pages/PageOption";
 
 const Locator = {
   Menu: {
-    home: (page: Page) => page.locator("#top-menu-home"),
+    top: (page: Page) => page.locator("#header-menu-top"),
   },
 };
 
 const Expect = {
   Menu: {
-    home: async (page: Page) =>
-      await expect(Locator.Menu.home(page)).toHaveText("Home"),
+    top: async (page: Page) =>
+      await expect(Locator.Menu.top(page)).toHaveText("Top"),
   },
 };
 
 const Click = {
-  home: async (page: Page, option?: PageOption) =>
-    await Locator.Menu.home(page).click(getClickOption(option)),
+  top: async (page: Page, option?: PageOption) =>
+    await Locator.Menu.top(page).click(getClickOption(option)),
 };
 
 const Assert = {
   init: async (page: Page) => {
-    await Expect.Menu.home(page);
+    await Expect.Menu.top(page);
   },
 };
 

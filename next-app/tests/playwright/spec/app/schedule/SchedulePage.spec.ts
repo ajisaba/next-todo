@@ -1,13 +1,12 @@
 import { test, expect } from "@playwright/test";
-import HomePage from "../../../lib/pages/app/HomePage";
+import TopPage from "../../../lib/pages/app/TopPage";
 import SchedulePage from "../../../lib/pages/app/schedule/SchedulePage";
-import { before } from "node:test";
 
 test.describe("スケジュール画面テスト", () => {
   test("遷移と初期表示の確認", async ({ page }) => {
-    await HomePage.Action.goto(page);
-    await HomePage.Assert.init(page);
-    await HomePage.Click.itemSchedule(page);
+    await TopPage.Action.goto(page);
+    await TopPage.Assert.init(page);
+    await TopPage.Click.itemSchedule(page);
     await SchedulePage.Assert.init(page);
   });
 
@@ -29,8 +28,8 @@ test.describe("スケジュール画面テスト", () => {
     });
 
     test("ホーム画面への遷移", async ({ page }) => {
-      await SchedulePage.Click.Header.home(page);
-      await HomePage.Assert.init(page);
+      await SchedulePage.Click.Header.top(page);
+      await TopPage.Assert.init(page);
     });
   });
 });

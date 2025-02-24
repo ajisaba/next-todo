@@ -1,9 +1,9 @@
-import HomePage from "@/app/page";
+import TopPage from "@/app/page";
 import { render } from "@testing-library/react";
 
-describe("テスト・HomePage", () => {
+describe("テスト・TopPage", () => {
   test("初期表示", async () => {
-    const { asFragment, getByRole } = render(<HomePage />);
+    const { asFragment, getByRole } = render(<TopPage />);
 
     expect(getByRole("heading", { level: 1 }).innerHTML).toBe("Next-Todo");
 

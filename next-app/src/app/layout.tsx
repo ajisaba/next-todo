@@ -21,9 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header className="h-[40px] w-full bg-blue-500 flex items-center text-white font-bold">
-          <div id="top-menu" className={cnTopItem}>
-            <Link id="top-menu-home" href="/">
-              Home
+          <div id="header-menu" className={cnTopItem}>
+            <Link id="header-menu-top" href="/">
+              Top
             </Link>
           </div>
         </header>

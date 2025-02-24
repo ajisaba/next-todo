@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function HomePage() {
+export default function TopPage() {
   return (
     <main className="w-full text-center p-4">
       <h1 className="text-xl">Next-Todo</h1>

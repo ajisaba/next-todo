@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`テスト・HomePage 初期表示 1`] = `
+exports[`テスト・TopPage 初期表示 1`] = `
 <DocumentFragment>
   <main
     class="w-full text-center p-4"
