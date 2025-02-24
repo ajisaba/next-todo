@@ -1,5 +1,6 @@
 import { Page, expect } from "@playwright/test";
 import { getClickOption, PageOption } from "../../PageOption";
+import AppHeader from "../../../components/AppHeader";
 import ListTable from "../../../components/ListTable";
 
 const Locator = {
@@ -31,6 +32,8 @@ const Action = {
 };
 
 const Click = {
+  Header: AppHeader.Click,
+
   itemSchedule: async (page: Page, option?: PageOption) =>
     Locator.itemSchedule(page).click(getClickOption(option)),
   Table: {
@@ -42,6 +45,8 @@ const Click = {
 };
 
 const Expect = {
+  Header: AppHeader,
+
   title: async (page: Page) =>
     await expect(Locator.title(page)).toHaveText("予定"),
 
@@ -87,6 +92,8 @@ const Assert = {
   },
 
   init: async (page: Page) => {
+    await Expect.Header.Assert.init(page);
+
     await Expect.title(page);
   },
 };

@@ -1,6 +1,7 @@
 import { test, expect } from "@playwright/test";
 import HomePage from "../../../lib/pages/app/HomePage";
 import SchedulePage from "../../../lib/pages/app/schedule/SchedulePage";
+import { before } from "node:test";
 
 test.describe("スケジュール画面テスト", () => {
   test("遷移と初期表示の確認", async ({ page }) => {
@@ -13,10 +14,23 @@ test.describe("スケジュール画面テスト", () => {
   test.describe("一覧のテスト", () => {
     test.beforeEach(async ({ page }) => {
       await SchedulePage.Action.goto(page);
+      await SchedulePage.Assert.init(page);
     });
 
     test("ヘッダーの確認", async ({ page }) => {
       await SchedulePage.Assert.Table.Header.init(page);
+    });
+  });
+
+  test.describe("共通ヘッダーのテスト", () => {
+    test.beforeEach(async ({ page }) => {
+      await SchedulePage.Action.goto(page);
+      await SchedulePage.Assert.init(page);
+    });
+
+    test("ホーム画面への遷移", async ({ page }) => {
+      await SchedulePage.Click.Header.home(page);
+      await HomePage.Assert.init(page);
     });
   });
 });
