@@ -1,14 +1,73 @@
-# Welcome to your CDK TypeScript project
+# Next.js をつかったサンプルサービス
 
-This is a blank project for CDK development with TypeScript.
+Next.js 15 の試験用に作成した予定サービス。
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+# ローカル環境
 
-## Useful commands
+ソースを取得します。
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+```
+git clone https://github.com/ajisaba/next-todo.git
+```
+
+サンプルサービスを起動する場合、next-app ディレクトリに移動します。
+
+```
+cd next-app
+```
+
+必要なモジュールをインストールします。
+
+```
+npm ci
+```
+
+インストールが成功したら以下を実行して起動します。
+
+```
+npm run dev
+```
+
+ブラウザで以下にアクセスするとサービス画面が表示されます。
+
+[http://localhost:3000/](http://localhost:3000/)
+
+# デプロイ
+
+cdk による AWS へのデプロイを予定。
+今はまだ実装していません。
+
+# テスト
+
+## E2E テスト
+
+E2E テストでは Playwright を使用します。
+
+### 準備
+
+E2E テスト用ディレクトリに移動します。
+
+```
+cd next-app/tests/playwright/
+```
+
+必要なモジュールをインストールします。
+
+```
+npm ci
+```
+
+### 実行
+
+E2E テスト用ディレクトリで以下を実行します。
+
+```
+nxp playwright text
+```
+
+失敗した場合、自動で結果ページが開かれます。
+成功した場合、手動で結果ページを開く必要があります。
+
+```
+npx playwright show-report
+```
