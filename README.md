@@ -1,6 +1,6 @@
 # Next.js をつかったサンプルサービス
 
-Next.js 15 の試験用に作成した予定サービス。
+Next.js 15 の試験用に作成したサンプル。
 
 # ローカル環境
 
@@ -62,6 +62,10 @@ npm ci
 E2E テスト用ディレクトリで以下を実行します。
 
 ```
+npm run test
+
+または
+
 nxp playwright text
 ```
 
@@ -69,5 +73,9 @@ nxp playwright text
 成功した場合、手動で結果ページを開く必要があります。
 
 ```
+npm run report
+
+または
+
 npx playwright show-report
 ```
